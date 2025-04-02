@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Background gradient dengan efek soft */
+        body {
+            background: linear-gradient(135deg, #1e2a47, #0099cc);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Efek glassmorphism pada container */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            width: 400px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Pilihan akun */
+        .account-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .account {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 15px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .account:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Input fields */
+        .input-group {
+            position: relative;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-align: center;
+            transition: 0.3s ease-in-out;
+        }
+
+        input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Tombol copy password */
+        .copy-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #fff;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .copy-btn:hover {
+            color: #00c3ff;
+        }
+
+        /* Tombol kembali */
+        .back-button {
+            display: inline-block;
+            padding: 12px 20px;
+            margin-top: 15px;
+            border-radius: 10px;
+            background: #00c3ff;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+        }
+
+        .back-button:hover {
+            background: #008bb5;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-2xl font-semibold mb-4">Pilih Akun Telegram</h2>
+        
+        <div class="account-list">
+            <div class="account" onclick="updateCredentials('akun1')">
+                telegram_user_01
+            </div>
+            <div class="account" onclick="updateCredentials('akun2')">
+                telegram_pro_user
+            </div>
+        </div>
+
+        <!-- Input password -->
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Password" readonly>
+            <span class="copy-btn" onclick="copyPassword()">📋</span>
+        </div>
+
+        <a href="../index.html" class="back-button">BACK</a>
+    </div>
+
+    <script>
+        function updateCredentials(account) {
+            const passwordField = document.getElementById("password");
+
+            const accounts = {
+                "akun1": { password: "securePass123!" },
+                "akun2": { password: "strongPassword@456" }
+            };
+
+            if (accounts[account]) {
+                passwordField.value = accounts[account].password;
+            }
+        }
+
+        function copyPassword() {
+            const passwordField = document.getElementById("password");
+            if (passwordField.value) {
+                navigator.clipboard.writeText(passwordField.value);
+                alert("Password berhasil disalin!");
+            }
+        }
+    </script>
+
+</body>
+</html>

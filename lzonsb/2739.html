@@ -1,0 +1,94 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 18px; /* Ukuran font sedikit lebih besar */
+        }
+        .container {
+            text-align: center;
+            max-width: 600px; /* Lebih besar dari sebelumnya */
+            width: 100%;
+        }
+        .container p {
+            font-size: 18px; /* Ukuran font lebih besar */
+            line-height: 1.6;
+            margin-bottom: 30px; /* Jarak lebih besar */
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px; /* Jarak antar elemen grid lebih lebar */
+            background-color: #2a2a2a;
+            padding: 25px;
+            border-radius: 10px;
+        }
+        .grid div {
+            background-color: #1a1a1a;
+            border: 1px solid #00aaff;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px; /* Ukuran font lebih besar */
+        }
+        .button {
+            background-color: #00aaff;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 25px;
+            padding: 18px 0;
+            width: 100%;
+            font-size: 18px; /* Ukuran font lebih besar */
+            cursor: pointer;
+            margin-top: 30px; /* Jarak lebih besar */
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0088cc; /* Warna tombol saat hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Ini merupakan Frasa Pemulihan Rahasia Anda. Tuliskan di atas kertas dan simpan di tempat yang aman. Anda akan diminta untuk memasukkan kembali frasa ini (secara berurutan) pada langkah berikutnya.</p>
+        <div class="grid">
+            <div>1. vague</div>
+            <div>7. earth</div>
+            <div>2. before</div>
+            <div>8. awesome</div>
+            <div>3. pledge</div>
+            <div>9. arrive</div>
+            <div>4. exercise</div>
+            <div>10. young</div>
+            <div>5. omit</div>
+            <div>11. orphan</div>
+            <div>6. shallow</div>
+            <div>12. replace</div>
+        </div>
+        <button class="button" onclick="toggleButtonText()">Lanjutkan</button>
+    </div>
+
+    <script>
+        function toggleButtonText() {
+            const button = document.querySelector('.button');
+            if (button.textContent === 'selesai') {
+                button.textContent = 'Kembali';
+                // Kembali ke halaman utama setelah tombol "Kembali" dipencet
+                setTimeout(() => {
+                    window.location.href = '../index.html'; // Arahkan ke halaman utama
+                }, 1000); // Tunggu 1 detik sebelum kembali
+            } else {
+                button.textContent = 'selesai';
+                // Aksi lainnya bisa ditambahkan di sini jika perlu
+            }
+        }
+    </script>
+</body>
+</html>
